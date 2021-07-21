@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PrimaryDetailFlow</string>
+    <string name="title_activity_website_detail_host">WebsiteDetailHostActivity</string>
+    <string name="title_website_list">Websites</string>
+    <string name="title_website_detail">Website Detail</string>
+</resources>

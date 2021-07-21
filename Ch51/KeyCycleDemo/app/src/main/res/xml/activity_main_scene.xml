@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="7000">
+       <KeyFrameSet>
+           <KeyCycle
+               motion:framePosition="0"
+               motion:motionTarget="@+id/button"
+               motion:wavePeriod="1"
+               motion:waveOffset="0dp"
+               motion:waveShape="sin"
+               android:translationY="60dp"/>
+           <KeyCycle
+               motion:framePosition="25"
+               motion:motionTarget="@+id/button"
+               motion:wavePeriod="2"
+               motion:waveOffset="0dp"
+               motion:waveShape="sin"
+               android:translationY="60dp"/>
+           <KeyCycle
+               motion:framePosition="50"
+               motion:motionTarget="@+id/button"
+               motion:wavePeriod="3"
+               motion:waveOffset="0dp"
+               motion:waveShape="sin"
+               android:translationY="150dp"/>
+           <KeyCycle
+               motion:framePosition="75"
+               motion:motionTarget="@+id/button"
+               motion:wavePeriod="2"
+               motion:waveOffset="0dp"
+               motion:waveShape="sin"
+               android:translationY="60dp"/>
+           <KeyCycle
+               motion:framePosition="100"
+               motion:motionTarget="@+id/button"
+               motion:wavePeriod="1"
+               motion:waveOffset="0dp"
+               motion:waveShape="sin"
+               android:translationY="60dp"/>
+       </KeyFrameSet>
+        <OnClick motion:targetId="@id/button"
+            motion:clickAction="toggle" />
+        <KeyFrameSet>
+            <KeyCycle
+                motion:framePosition="0"
+                motion:motionTarget="@+id/button"
+                motion:wavePeriod="1"
+                motion:waveOffset="0dp"
+                motion:waveShape="sin"
+                android:translationY="60dp"
+                android:rotation="45"/>
+            <KeyCycle
+                motion:framePosition="25"
+                motion:motionTarget="@+id/button"
+                motion:wavePeriod="2"
+                motion:waveOffset="0dp"
+                motion:waveShape="sin"
+                android:translationY="60dp"
+                android:rotation="80"/>
+            <KeyCycle
+                motion:framePosition="50"
+                motion:motionTarget="@+id/button"
+                motion:wavePeriod="3"
+                motion:waveOffset="0dp"
+                motion:waveShape="sin"
+                android:translationY="150dp"
+                android:rotation="45"/>
+            <KeyCycle
+                motion:framePosition="75"
+                motion:motionTarget="@+id/button"
+                motion:wavePeriod="2"
+                motion:waveOffset="0dp"
+                motion:waveShape="sin"
+                android:translationY="60dp"
+                android:rotation="80"/>
+            <KeyCycle
+                motion:framePosition="100"
+                motion:motionTarget="@+id/button"
+                motion:wavePeriod="1"
+                motion:waveOffset="0dp"
+                motion:waveShape="sin"
+                android:translationY="60dp"
+                android:rotation="45"/>
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="0dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_editor_absoluteX="16dp"
+            motion:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+</MotionScene>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KotlinLayout</string>
+    <string name="press_me">Press Me</string>
+</resources>

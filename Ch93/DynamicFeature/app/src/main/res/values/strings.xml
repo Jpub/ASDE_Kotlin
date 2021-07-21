@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DynamicFeature</string>
+    <string name="launch_feature">Launch Feature</string>
+    <string name="install_feature">Install Feature</string>
+    <string name="delete_feature">Delete Feature</string>
+    <string name="title_my_dynamic_feature">My Example Dynamic Feature</string>
+</resources>

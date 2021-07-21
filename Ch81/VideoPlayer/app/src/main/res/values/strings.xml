@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">VideoPlayer</string>
+    <string name="enter_pip_mode">Enter PiP Mode</string>
+</resources>
