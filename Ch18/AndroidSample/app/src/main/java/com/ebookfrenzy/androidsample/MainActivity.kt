@@ -3,6 +3,7 @@ package com.ebookfrenzy.androidsample
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+
 import com.ebookfrenzy.androidsample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         if (binding.dollarText.text.isNotEmpty()) {
             val dollarValue = binding.dollarText.text.toString().toFloat()
             val euroValue = dollarValue * 0.85f
-                binding.textView.text = euroValue.toString()
+            binding.textView.text = euroValue.toString()
         } else {
             binding.textView.text = getString(R.string.no_value_string)
         }
