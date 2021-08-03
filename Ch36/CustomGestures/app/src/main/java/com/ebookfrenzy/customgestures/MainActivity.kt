@@ -8,11 +8,11 @@ import android.gesture.GestureOverlayView
 import android.gesture.GestureOverlayView.OnGesturePerformedListener
 
 import com.ebookfrenzy.customgestures.databinding.ActivityMainBinding
+
 import android.widget.Toast
 import android.gesture.Gesture
 
 class MainActivity : AppCompatActivity(), OnGesturePerformedListener {
-
     private lateinit var binding: ActivityMainBinding
     var gLibrary: GestureLibrary? = null
 

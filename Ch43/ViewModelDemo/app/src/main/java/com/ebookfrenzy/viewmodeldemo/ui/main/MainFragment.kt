@@ -6,19 +6,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
+import com.ebookfrenzy.viewmodeldemo.databinding.MainFragmentBinding
+
 import androidx.databinding.DataBindingUtil
 import com.ebookfrenzy.viewmodeldemo.R
-import com.ebookfrenzy.viewmodeldemo.databinding.MainFragmentBinding
 import com.ebookfrenzy.viewmodeldemo.BR.myViewModel
 
 class MainFragment : Fragment() {
+
+    lateinit var binding: MainFragmentBinding
 
     companion object {
         fun newInstance() = MainFragment()
     }
 
     private lateinit var viewModel: MainViewModel
-    lateinit var binding: MainFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,5 +38,7 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         binding.setVariable(myViewModel, viewModel)
+
     }
+
 }

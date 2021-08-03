@@ -32,6 +32,20 @@ class ToolbarFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
 
     var activityCallback: ToolbarFragment.ToolbarListener? = null
 
+    interface ToolbarListener {
+        fun onButtonClick(position: Int, text: String)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try {
+            activityCallback = context as ToolbarListener
+        } catch (e: ClassCastException) {
+            throw ClassCastException(context.toString()
+                    + " must implement ToolbarListener")
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -44,18 +58,15 @@ class ToolbarFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         _binding = FragmentToolbarBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.seekBar1.setOnSeekBarChangeListener(this)
         binding.button1.setOnClickListener { v: View -> buttonClicked(v) }
     }
-
     private fun buttonClicked(view: View) {
         activityCallback?.onButtonClick(seekvalue,
             binding.editText1.text.toString())
@@ -70,20 +81,6 @@ class ToolbarFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
     }
 
     override fun onStopTrackingTouch(arg0: SeekBar) {
-    }
-
-    interface ToolbarListener {
-        fun onButtonClick(position: Int, text: String)
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        try {
-            activityCallback = context as ToolbarListener
-        } catch (e: ClassCastException) {
-            throw ClassCastException(context.toString()
-                    + " must implement ToolbarListener")
-        }
     }
 
     companion object {

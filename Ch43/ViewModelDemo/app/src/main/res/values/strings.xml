@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">ViewModelDemo</string>
     <string name="mainfragment">MainFragment</string>
-    <string name="button">Convert</string>
+    <string name="convert">Convert</string>
 </resources>

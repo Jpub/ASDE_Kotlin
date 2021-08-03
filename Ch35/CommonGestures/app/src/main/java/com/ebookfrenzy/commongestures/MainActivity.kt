@@ -10,7 +10,6 @@ import com.ebookfrenzy.commongestures.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(),
     GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
-
     private lateinit var binding: ActivityMainBinding
     var gDetector: GestureDetectorCompat? = null
 
@@ -27,13 +26,11 @@ class MainActivity : AppCompatActivity(),
         binding.gestureStatusText.text = "onDown"
         return true
     }
-
     override fun onFling(event1: MotionEvent, event2: MotionEvent,
                          velocityX: Float, velocityY: Float): Boolean {
         binding.gestureStatusText.text = "onFling"
         return true
     }
-
     override fun onLongPress(event: MotionEvent) {
         binding.gestureStatusText.text = "onLongPress"
     }
@@ -57,7 +54,6 @@ class MainActivity : AppCompatActivity(),
         binding.gestureStatusText.text = "onDoubleTap"
         return true
     }
-
 
     override fun onDoubleTapEvent(event: MotionEvent): Boolean {
         binding.gestureStatusText.text = "onDoubleTapEvent"

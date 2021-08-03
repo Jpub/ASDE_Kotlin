@@ -2,18 +2,13 @@ package com.ebookfrenzy.fragmentexample
 
 import androidx.fragment.app.FragmentActivity
 import android.os.Bundle
-
-import com.ebookfrenzy.fragmentexample.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : FragmentActivity(),
-                        ToolbarFragment.ToolbarListener {
-
-    private lateinit var binding: ActivityMainBinding
-
+    ToolbarFragment.ToolbarListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
     }
 
     override fun onButtonClick(fontsize: Int, text: String) {

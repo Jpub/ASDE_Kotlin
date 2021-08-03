@@ -9,7 +9,6 @@ import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener
 import com.ebookfrenzy.pinchexample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
     var scaleGestureDetector: ScaleGestureDetector? = null
 
