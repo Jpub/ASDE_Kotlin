@@ -9,6 +9,7 @@ import com.ebookfrenzy.roomdemo.ProductDao
 
 @Database(entities = [(Product::class)], version = 1)
 abstract class ProductRoomDatabase: RoomDatabase() {
+
     abstract fun productDao(): ProductDao
 
     companion object {

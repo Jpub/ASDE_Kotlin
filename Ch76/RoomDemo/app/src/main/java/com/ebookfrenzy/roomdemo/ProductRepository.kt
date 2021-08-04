@@ -10,6 +10,7 @@ class ProductRepository(application: Application) {
 
     private var productDao: ProductDao?
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
+
     val allProducts: LiveData<List<Product>>?
 
     init {

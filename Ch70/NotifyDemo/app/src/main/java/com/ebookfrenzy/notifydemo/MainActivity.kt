@@ -46,11 +46,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sendNotification(view: View) {
-
         val notificationID = 101
-
         val resultIntent = Intent(this, ResultActivity::class.java)
-
         val pendingIntent = PendingIntent.getActivity(
             this,
             0,
@@ -77,35 +74,41 @@ class MainActivity : AppCompatActivity() {
 
         notificationManager?.notify(notificationID, notification)
 
-        /*val GROUP_KEY_NOTIFY = "group_key_notify"
+        val GROUP_KEY_NOTIFY = "group_key_notify"
+
         var builderSummary: Notification.Builder = Notification.Builder(this, channelID)
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setContentTitle("A Bundle Example")
             .setContentText("You have 3 new messages")
             .setGroup(GROUP_KEY_NOTIFY)
             .setGroupSummary(true)
+
         var builder1: Notification.Builder = Notification.Builder(this, channelID)
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setContentTitle("New Message")
             .setContentText("You have a new message from Kassidy")
             .setGroup(GROUP_KEY_NOTIFY)
+
         var builder2: Notification.Builder = Notification.Builder(this, channelID)
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setContentTitle("New Message")
             .setContentText("You have a new message from Caitlyn")
             .setGroup(GROUP_KEY_NOTIFY)
+
         var builder3: Notification.Builder = Notification.Builder(this, channelID)
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setContentTitle("New Message")
             .setContentText("You have a new message from Jason")
             .setGroup(GROUP_KEY_NOTIFY)
+
         var notificationId0 = 100
         var notificationId1 = 101
         var notificationId2 = 102
         var notificationId3 = 103
+
         notificationManager?.notify(notificationId1, builder1.build())
         notificationManager?.notify(notificationId2, builder2.build())
         notificationManager?.notify(notificationId3, builder3.build())
-        notificationManager?.notify(notificationId0, builderSummary.build())*/
+        notificationManager?.notify(notificationId0, builderSummary.build())
     }
 }

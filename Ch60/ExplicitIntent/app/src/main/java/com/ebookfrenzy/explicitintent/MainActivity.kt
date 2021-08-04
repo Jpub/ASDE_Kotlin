@@ -2,12 +2,12 @@ package com.ebookfrenzy.explicitintent
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ebookfrenzy.explicitintent.databinding.ActivityMainBinding
 import android.view.View
 import android.content.Intent
 
-class MainActivity : AppCompatActivity() {
+import com.ebookfrenzy.explicitintent.databinding.ActivityMainBinding
 
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val request_code = 5
 
@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 
     fun sendText(view: View) {
@@ -27,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
         if ((requestCode == request_code) &&
             (resultCode == RESULT_OK)) {
             data?.let {

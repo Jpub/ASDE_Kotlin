@@ -8,10 +8,9 @@ import android.widget.MediaController
 import android.util.Log
 
 class MainActivity : AppCompatActivity() {
-
-    private var TAG = "VideoPlayer"
     private var mediaController: MediaController? = null
     private lateinit var binding: ActivityMainBinding
+    private var TAG = "VideoPlayer"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

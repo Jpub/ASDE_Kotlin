@@ -7,14 +7,12 @@ import com.ebookfrenzy.asyncdemo.databinding.ActivityMainBinding
 import android.os.AsyncTask
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 
     fun buttonClick(view: View) {
@@ -26,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun doInBackground(vararg params: String): String {
-
             var i = 0
             while (i <= 20) {
                 try {
@@ -37,6 +34,7 @@ class MainActivity : AppCompatActivity() {
                     return(e.localizedMessage)
                 }
             }
+
             return "Button Pressed"
         }
 

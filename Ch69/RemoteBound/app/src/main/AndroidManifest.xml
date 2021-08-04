@@ -13,7 +13,7 @@
             android:name=".RemoteService"
             android:enabled="true"
             android:exported="true"
-            android:process=":my_process">
+            android:process=":my_process" >
         </service>
 
         <activity

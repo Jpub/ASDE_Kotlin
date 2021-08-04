@@ -3,11 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch61/ImplicitIntent/app/src/main/res/layout/activity_main.xml" value="0.31068840579710144" />
+        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch61/ImplicitIntent/app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
     </option>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

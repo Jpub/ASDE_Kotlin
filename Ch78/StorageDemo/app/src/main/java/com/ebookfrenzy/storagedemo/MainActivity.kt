@@ -13,7 +13,6 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 class MainActivity : AppCompatActivity() {
-
     private val CREATE_REQUEST_CODE = 40
     private val OPEN_REQUEST_CODE = 41
     private val SAVE_REQUEST_CODE = 42
@@ -24,14 +23,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 
     fun newFile(view: View) {
         val intent = Intent(Intent.ACTION_CREATE_DOCUMENT)
+
         intent.addCategory(Intent.CATEGORY_OPENABLE)
         intent.type = "text/plain"
         intent.putExtra(Intent.EXTRA_TITLE, "newfile.txt")
+
         startActivityForResult(intent, CREATE_REQUEST_CODE)
     }
 
@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
         intent.addCategory(Intent.CATEGORY_OPENABLE)
         intent.type = "text/plain"
+
         startActivityForResult(intent, SAVE_REQUEST_CODE)
     }
 
@@ -81,6 +82,7 @@ class MainActivity : AppCompatActivity() {
             val fileOutputStream = FileOutputStream(
                 pfd?.fileDescriptor)
             val textContent = binding.fileText.text.toString()
+
             fileOutputStream.write(textContent.toByteArray())
             fileOutputStream.close()
             pfd?.close()
@@ -93,6 +95,7 @@ class MainActivity : AppCompatActivity() {
 
     fun openFile(view: View) {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+
         intent.addCategory(Intent.CATEGORY_OPENABLE)
         intent.type = "text/plain"
         startActivityForResult(intent, OPEN_REQUEST_CODE)
@@ -104,11 +107,14 @@ class MainActivity : AppCompatActivity() {
             inputStream))
         val stringBuilder = StringBuilder()
         var currentline = reader.readLine()
+
         while (currentline != null) {
             stringBuilder.append(currentline + "\n")
             currentline = reader.readLine()
         }
+
         inputStream?.close()
+
         return stringBuilder.toString()
     }
 }

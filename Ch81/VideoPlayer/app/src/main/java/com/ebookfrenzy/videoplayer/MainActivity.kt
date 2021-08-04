@@ -20,13 +20,11 @@ import android.app.RemoteAction
 import android.graphics.drawable.Icon
 
 class MainActivity : AppCompatActivity() {
-
     private val REQUEST_CODE = 101
-    private var TAG = "VideoPlayer"
     private var mediaController: MediaController? = null
-    private val receiver: BroadcastReceiver? = null
-
     private lateinit var binding: ActivityMainBinding
+    private var TAG = "VideoPlayer"
+    private val receiver: BroadcastReceiver? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
 
     private val authenticationCallback: BiometricPrompt.AuthenticationCallback
         get() = object : BiometricPrompt.AuthenticationCallback() {
+
             override fun onAuthenticationError(errorCode: Int,
                                                errString: CharSequence) {
                 notifyUser("Authentication error: $errString")
@@ -90,9 +91,10 @@ class MainActivity : AppCompatActivity() {
             .setSubtitle("Authentication is required to continue")
             .setDescription("This app uses biometric authentication to protect your data.")
             .setNegativeButton("Cancel", this.mainExecutor,
-                    DialogInterface.OnClickListener { dialogInterface, i ->
-                        notifyUser("Authentication cancelled") }).build()
-                    biometricPrompt.authenticate(getCancellationSignal(), mainExecutor,
-                authenticationCallback)
+                DialogInterface.OnClickListener { dialogInterface, i ->
+                    notifyUser("Authentication cancelled") }).build()
+
+        biometricPrompt.authenticate(getCancellationSignal(), mainExecutor,
+            authenticationCallback)
     }
 }

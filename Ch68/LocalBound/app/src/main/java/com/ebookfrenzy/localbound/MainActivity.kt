@@ -2,6 +2,7 @@ package com.ebookfrenzy.localbound
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import com.ebookfrenzy.localbound.databinding.ActivityMainBinding
 import android.content.ComponentName
 import android.content.Context
@@ -11,7 +12,6 @@ import android.content.Intent
 import android.view.View
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
     var myService: BoundService? = null
     var isBound = false
@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val myConnection = object : ServiceConnection {
+
         override fun onServiceConnected(className: ComponentName,
                                         service: IBinder) {
             val binder = service as BoundService.MyLocalBinder

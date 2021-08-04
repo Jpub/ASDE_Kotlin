@@ -18,15 +18,9 @@ class MainActivity : AppCompatActivity() {
         configureReceiver()
     }
 
-    fun broadcastIntent(view: View) {
-        val intent = Intent()
-        intent.action = "com.ebookfrenzy.sendbroadcast"
-        intent.flags = Intent.FLAG_INCLUDE_STOPPED_PACKAGES
-        sendBroadcast(intent)
-    }
-
     private fun configureReceiver() {
         val filter = IntentFilter()
+
         filter.addAction("com.ebookfrenzy.sendbroadcast")
         filter.addAction("android.intent.action.ACTION_POWER_DISCONNECTED")
 
@@ -36,5 +30,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        unregisterReceiver(receiver)
+    }
+
+    fun broadcastIntent(view: View) {
+        val intent = Intent()
+        intent.action = "com.ebookfrenzy.sendbroadcast"
+        intent.flags = Intent.FLAG_INCLUDE_STOPPED_PACKAGES
+        sendBroadcast(intent)
     }
 }

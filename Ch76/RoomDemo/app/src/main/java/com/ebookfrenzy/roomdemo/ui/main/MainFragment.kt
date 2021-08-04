@@ -19,13 +19,13 @@ class MainFragment : Fragment() {
 
     private var adapter: ProductListAdapter? = null
 
-    val viewModel: MainViewModel by viewModels()
-    private var _binding: MainFragmentBinding? = null
-    private val binding get() = _binding!!
-
     companion object {
         fun newInstance() = MainFragment()
     }
+
+    val viewModel: MainViewModel by viewModels()
+    private var _binding: MainFragmentBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +37,7 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         listenerSetup()
         observerSetup()
         recyclerSetup()
@@ -62,8 +63,8 @@ class MainFragment : Fragment() {
             }
         }
 
-        binding.findButton.setOnClickListener { viewModel.findProduct(binding.productName.text.
-                toString()) }
+        binding.findButton.setOnClickListener { viewModel.findProduct(binding.productName.
+        text.toString()) }
 
         binding.deleteButton.setOnClickListener {
             viewModel.deleteProduct(binding.productName.text.toString())

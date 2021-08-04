@@ -16,12 +16,11 @@ import android.app.Notification
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
-
-    private val notificationId = 101
-    private val KEY_TEXT_REPLY = "key_text_reply"
     private lateinit var binding: ActivityMainBinding
     private var notificationManager: NotificationManager? = null
     private val channelID = "com.ebookfrenzy.directreply.news"
+    private val notificationId = 101
+    private val KEY_TEXT_REPLY = "key_text_reply"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         notificationManager =
             getSystemService(
                 Context.NOTIFICATION_SERVICE) as NotificationManager
+
         createNotificationChannel(channelID,
             "DirectReply News", "Example News Channel")
 
@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     private fun handleIntent() {
         val intent = this.intent
         val remoteInput = RemoteInput.getResultsFromIntent(intent)
+
         if (remoteInput != null) {
             val inputString = remoteInput.getCharSequence(
                 KEY_TEXT_REPLY).toString()

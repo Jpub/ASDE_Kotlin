@@ -28,16 +28,6 @@ class AppLinkingActivity : AppCompatActivity() {
                 val uri = Uri.parse("http://<your_domain>/landmarks/" + landmark.id)
                 val intent = Intent(Intent.ACTION_VIEW, uri)
                 startActivity(intent)
-            } else {
-                titleText?.setText("No Match")
-            }
-
-            /* if (landmark != null) {
-
-                val intent = Intent(this, LandmarkActivity::class.java)
-                val landmarkid = idText?.text.toString()
-                intent.putExtra(LANDMARK_ID, landmarkid)
-                startActivity(intent)
 
                 /*
                 val uri = Uri.parse("http://example.com/landmarks/" + landmark.id);
@@ -46,7 +36,7 @@ class AppLinkingActivity : AppCompatActivity() {
                 */
             } else {
                 titleText?.setText("No Match")
-            }*/
+            }
         }
     }
 

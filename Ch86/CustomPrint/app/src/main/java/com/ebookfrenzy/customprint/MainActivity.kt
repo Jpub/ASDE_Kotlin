@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     inner class MyPrintDocumentAdapter(private var context: Context)
         : PrintDocumentAdapter() {
+
         private var pageHeight: Int = 0
         private var pageWidth: Int = 0
         private var myPdfDocument: PdfDocument? = null
@@ -37,25 +38,31 @@ class MainActivity : AppCompatActivity() {
                               callback: LayoutResultCallback?,
                               metadata: Bundle?) {
             myPdfDocument = PrintedPdfDocument(context, newAttributes)
+
             val height = newAttributes.mediaSize?.heightMils
             val width = newAttributes.mediaSize?.heightMils
+
             height?.let {
                 pageHeight = it / 1000 * 72
             }
+
             width?.let {
                 pageWidth = it / 1000 * 72
             }
+
             cancellationSignal?.let {
                 if (it.isCanceled) {
                     callback?.onLayoutCancelled()
                     return
                 }
             }
+
             if (totalpages > 0) {
                 val builder =
                     PrintDocumentInfo.Builder("print_output.pdf").setContentType(
                         PrintDocumentInfo.CONTENT_TYPE_DOCUMENT)
                         .setPageCount(totalpages)
+
                 val info = builder.build()
                 callback?.onLayoutFinished(info, true)
             } else {
@@ -67,7 +74,6 @@ class MainActivity : AppCompatActivity() {
                              destination: ParcelFileDescriptor?,
                              cancellationSignal: android.os.CancellationSignal?,
                              callback: WriteResultCallback?) {
-
             for (i in 0 until totalpages) {
                 if (pageInRange(pageRanges, i)) {
                     val newPage = PdfDocument.PageInfo.Builder(pageWidth,
@@ -83,9 +89,11 @@ class MainActivity : AppCompatActivity() {
                             return
                         }
                     }
+
                     page?.let {
                         drawPage(it, i)
                     }
+
                     myPdfDocument?.finishPage(page)
                 }
             }
@@ -138,7 +146,7 @@ class MainActivity : AppCompatActivity() {
             paint.textSize = 14f
             canvas.drawText(
                 "This is some test content to verify that custom document printing works",
-                        leftMargin.toFloat(), (titleBaseLine + 35).toFloat(),
+                leftMargin.toFloat(), (titleBaseLine + 35).toFloat(),
                 paint)
 
             if (pagenum % 2 == 0)
@@ -147,6 +155,7 @@ class MainActivity : AppCompatActivity() {
                 paint.color = Color.GREEN
 
             val pageInfo = page.info
+
             canvas.drawCircle((pageInfo.pageWidth / 2).toFloat(),
                 (pageInfo.pageHeight / 2).toFloat(),
                 150f,

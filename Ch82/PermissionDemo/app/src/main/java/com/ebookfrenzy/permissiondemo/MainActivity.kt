@@ -27,10 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         if (permission != PackageManager.PERMISSION_GRANTED) {
             Log.i(TAG, "Permission to record denied")
-
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.RECORD_AUDIO)) {
                 val builder = AlertDialog.Builder(this)
+
                 builder.setMessage(
                     "Permission to access the microphone is required for this app to record audio.")
                         .setTitle("Permission required")
@@ -38,7 +38,8 @@ class MainActivity : AppCompatActivity() {
                         Log.i(TAG, "Clicked")
                         makeRequest()
                     }
-                    val dialog = builder.create()
+
+                val dialog = builder.create()
                 dialog.show()
             } else {
                 makeRequest()

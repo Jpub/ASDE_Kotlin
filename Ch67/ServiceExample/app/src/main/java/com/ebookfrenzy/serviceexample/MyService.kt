@@ -23,6 +23,15 @@ class MyService : Service() {
         return Service.START_STICKY
     }
 
+    override fun onBind(intent: Intent): IBinder {
+        Log.i(TAG, "Service onBind")
+        TODO("Return the communication channel to the service.")
+    }
+
+    override fun onDestroy() {
+        Log.i(TAG, "Service onDestroy")
+    }
+
     suspend fun performTask(startId: Int) {
         Log.i(TAG, "Service onStartCommand " + startId)
         var i: Int = 0
@@ -34,14 +43,5 @@ class MyService : Service() {
             }
             Log.i(TAG, "Service running " + startId)
         }
-    }
-
-    override fun onBind(intent: Intent): IBinder {
-        Log.i(TAG, "Service onBind")
-        TODO("Return the communication channel to the service.")
-    }
-
-    override fun onDestroy() {
-        Log.i(TAG, "Service onDestroy")
     }
 }

@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val myConnection = object : ServiceConnection {
+
         override fun onServiceConnected(
             className: ComponentName,
             service: IBinder) {

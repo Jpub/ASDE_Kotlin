@@ -45,7 +45,9 @@ class MainActivity : AppCompatActivity() {
     private fun createWebPrintJob(webView: WebView) {
         val printManager = this
             .getSystemService(Context.PRINT_SERVICE) as PrintManager
+
         val printAdapter = webView.createPrintDocumentAdapter("MyDocument")
+
         val jobName = getString(R.string.app_name) + " Print Test"
 
         printManager.print(jobName, printAdapter,

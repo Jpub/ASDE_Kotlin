@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.ebookfrenzy.dynamicfeature.databinding.ActivityMainBinding
 import android.view.View
 import android.content.Intent
-
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import android.widget.Toast
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     fun launchFeature(view: View) {
         if (manager.installedModules.contains("my_dynamic_feature")) {
             startActivity(Intent(
-                "<com.yourcompany>.my_dynamic_feature.MyFeatureActivity"))
+                "com.ebookfrenzy.my_dynamic_feature.MyFeatureActivity"))
         } else {
             binding.statusText.text = "Feature not yet installed"
         }
@@ -78,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                             binding.statusText.text = "Confirmation Request Failed."
                         }
                     }
+
                     SplitInstallSessionStatus.DOWNLOADING -> {
                         val size = state.totalBytesToDownload()
                         val downloaded = state.bytesDownloaded()
@@ -85,16 +85,22 @@ class MainActivity : AppCompatActivity() {
                             String.format(Locale.getDefault(),
                                 "%d of %d bytes downloaded.", downloaded, size)
                     }
+
                     SplitInstallSessionStatus.INSTALLING ->
                         binding.statusText.text = "Installing feature"
+
                     SplitInstallSessionStatus.DOWNLOADED ->
                         binding.statusText.text = "Download Complete"
+
                     SplitInstallSessionStatus.INSTALLED ->
                         binding.statusText.text = "Installed - Feature is ready"
+
                     SplitInstallSessionStatus.CANCELED ->
                         binding.statusText.text = "Installation cancelled"
+
                     SplitInstallSessionStatus.PENDING ->
                         binding.statusText.text = "Installation pending"
+
                     SplitInstallSessionStatus.FAILED ->
                         binding.statusText.text =
                             String.format(Locale.getDefault(),
@@ -115,6 +121,7 @@ class MainActivity : AppCompatActivity() {
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
         if (requestCode == REQUESTCODE) {
             if (resultCode == Activity.RESULT_OK) {
                 binding.statusText.text = "Beginning Installation."

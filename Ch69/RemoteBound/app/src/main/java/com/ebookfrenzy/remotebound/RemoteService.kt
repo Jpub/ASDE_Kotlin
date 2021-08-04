@@ -9,8 +9,7 @@ class RemoteService : Service() {
 
     private val myMessenger = Messenger(IncomingHandler())
 
-    inner class IncomingHandler : Handler(Looper.getMainLooper())
-    {
+    inner class IncomingHandler : Handler(Looper.getMainLooper()) {
         override fun handleMessage(msg: Message) {
             val data = msg.data
             val dataString = data.getString("MyString")

@@ -14,7 +14,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
     private var mediaRecorder: MediaRecorder? = null
     private var mediaPlayer: MediaPlayer? = null
@@ -31,12 +30,6 @@ class MainActivity : AppCompatActivity() {
         audioSetup()
     }
 
-    private fun hasMicrophone(): Boolean {
-        val pmanager = this.packageManager
-        return pmanager.hasSystemFeature(
-            PackageManager.FEATURE_MICROPHONE)
-    }
-
     private fun audioSetup() {
         if (!hasMicrophone()) {
             binding.stopButton.isEnabled = false
@@ -46,11 +39,18 @@ class MainActivity : AppCompatActivity() {
             binding.playButton.isEnabled = false
             binding.stopButton.isEnabled = false
         }
+
         audioFilePath = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC)?.
-        absolutePath + "/myaudio.3gp"
+                            absolutePath + "/myaudio.3gp"
 
         requestPermission(Manifest.permission.RECORD_AUDIO,
             RECORD_REQUEST_CODE)
+    }
+
+    private fun hasMicrophone(): Boolean {
+        val pmanager = this.packageManager
+        return pmanager.hasSystemFeature(
+            PackageManager.FEATURE_MICROPHONE)
     }
 
     fun recordAudio(view: View) {
@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         binding.stopButton.isEnabled = true
         binding.playButton.isEnabled = false
         binding.recordButton.isEnabled = false
+
         try {
             mediaRecorder = MediaRecorder()
             mediaRecorder?.setAudioSource(MediaRecorder.AudioSource.MIC)
@@ -69,12 +70,14 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+
         mediaRecorder?.start()
     }
 
     fun stopAudio(view: View) {
         binding.stopButton.isEnabled = false
         binding.playButton.isEnabled = true
+
         if (isRecording) {
             binding.recordButton.isEnabled = false
             mediaRecorder?.stop()
@@ -92,6 +95,7 @@ class MainActivity : AppCompatActivity() {
         binding.playButton.isEnabled = false
         binding.recordButton.isEnabled = false
         binding.stopButton.isEnabled = true
+
         mediaPlayer = MediaPlayer()
         mediaPlayer?.setDataSource(audioFilePath)
         mediaPlayer?.prepare()
@@ -101,6 +105,7 @@ class MainActivity : AppCompatActivity() {
     private fun requestPermission(permissionType: String, requestCode: Int) {
         val permission = ContextCompat.checkSelfPermission(this,
             permissionType)
+
         if (permission != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                 arrayOf(permissionType), requestCode
@@ -110,38 +115,36 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRequestPermissionsResult(requestCode: Int,
                                             permissions: Array<String>, grantResults: IntArray) {
+
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         when (requestCode) {
             RECORD_REQUEST_CODE -> {
+
                 if (grantResults.isEmpty() || grantResults[0]
-                    != PackageManager.PERMISSION_GRANTED
-                ) {
+                    != PackageManager.PERMISSION_GRANTED) {
+
                     binding.recordButton.isEnabled = false
-                    Toast.makeText(
-                        this,
+
+                    Toast.makeText(this,
                         "Record permission required",
-                        Toast.LENGTH_LONG
-                    ).show()
+                        Toast.LENGTH_LONG).show()
                 } else {
                     requestPermission(
                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        STORAGE_REQUEST_CODE
-                    )
+                        STORAGE_REQUEST_CODE)
                 }
                 return
             }
 
             STORAGE_REQUEST_CODE -> {
+
                 if (grantResults.isEmpty() || grantResults[0]
-                    != PackageManager.PERMISSION_GRANTED
-                ) {
+                    != PackageManager.PERMISSION_GRANTED) {
                     binding.recordButton.isEnabled = false
-                    Toast.makeText(
-                        this,
+                    Toast.makeText(this,
                         "External Storage permission required",
-                        Toast.LENGTH_LONG
-                    ).show()
+                        Toast.LENGTH_LONG).show()
                 }
                 return
             }

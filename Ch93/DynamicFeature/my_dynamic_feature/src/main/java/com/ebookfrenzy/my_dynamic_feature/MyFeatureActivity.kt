@@ -2,8 +2,8 @@ package com.ebookfrenzy.my_dynamic_feature
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ebookfrenzy.my_dynamic_feature.databinding.ActivityMyFeatureBinding
 import com.google.android.play.core.splitcompat.SplitCompat
+import com.ebookfrenzy.my_dynamic_feature.databinding.ActivityMyFeatureBinding
 
 class MyFeatureActivity : AppCompatActivity() {
 

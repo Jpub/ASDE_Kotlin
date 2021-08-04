@@ -8,7 +8,6 @@ import android.content.Intent
 import com.ebookfrenzy.explicitintent.databinding.ActivityBBinding
 
 class ActivityB : AppCompatActivity() {
-
     private lateinit var binding: ActivityBBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +16,7 @@ class ActivityB : AppCompatActivity() {
         setContentView(binding.root)
 
         val extras = intent.extras ?: return
+
         val qString = extras.getString("qString")
         binding.textView2.text = qString
     }

@@ -50,13 +50,10 @@ class LandmarkActivity : AppCompatActivity() {
         }
     }
 
-    private fun displayLandmark(landmarkId: String?) {
+    private fun displayLandmark(landmarkId: String) {
         val dbHandler = MyDBHandler(this, null, null, 1)
 
-        if(landmarkId == null)
-            landmark == null
-        else
-            landmark = dbHandler.findLandmark(landmarkId)
+        landmark = dbHandler.findLandmark(landmarkId)
 
         if (landmark != null) {
 

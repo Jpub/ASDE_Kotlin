@@ -2,11 +2,11 @@ package com.ebookfrenzy.mywebview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ebookfrenzy.mywebview.databinding.ActivityMainBinding
 import java.net.URL
 
-class MainActivity : AppCompatActivity() {
+import com.ebookfrenzy.mywebview.databinding.ActivityMainBinding
 
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
