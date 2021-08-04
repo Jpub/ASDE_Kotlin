@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun displayMessage(message: String) {
-        Toast.makeText(this@MainActivity,message,Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

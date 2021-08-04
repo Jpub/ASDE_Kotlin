@@ -33,6 +33,21 @@ class MainActivity : AppCompatActivity() {
         configureTabLayout()
     }
 
+    private fun configureTabLayout() {
+
+        repeat (4) {
+
+            binding.tabLayout.addTab(binding.tabLayout.newTab())
+        }
+
+        val adapter = TabPagerAdapter(this, binding.tabLayout.tabCount)
+        binding.viewPager.adapter = adapter
+
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            tab.text = "Tab ${(position + 1)} Item"
+        }.attach()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -47,19 +62,5 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun configureTabLayout() {
-
-        repeat (4) {
-            binding.tabLayout.addTab(binding.tabLayout.newTab())
-        }
-
-        val adapter = TabPagerAdapter(this, binding.tabLayout.tabCount)
-        binding.viewPager.adapter = adapter
-
-        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.text = "Tab ${(position + 1)} Item"
-        }.attach()
     }
 }

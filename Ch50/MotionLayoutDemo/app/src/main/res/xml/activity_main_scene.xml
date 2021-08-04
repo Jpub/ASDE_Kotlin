@@ -17,7 +17,7 @@
                motion:framePosition="25"
                motion:keyPositionType="parentRelative"
                motion:percentX="0.196"
-               motion:percentY="0.156" />
+               motion:percentY="0.842" />
            <KeyPosition
                motion:motionTarget="@+id/myButton"
                motion:framePosition="75"
@@ -34,8 +34,8 @@
             android:id="@+id/myButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="8dp"
             motion:layout_constraintEnd_toEndOf="parent" >
             <CustomAttribute
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_editor_absoluteY="16dp"
+            motion:layout_editor_absoluteY="23dp"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="8dp" >

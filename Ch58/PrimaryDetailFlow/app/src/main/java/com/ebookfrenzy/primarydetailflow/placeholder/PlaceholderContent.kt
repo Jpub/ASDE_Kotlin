@@ -32,8 +32,6 @@ object PlaceholderContent {
             "https://www.nytimes.com"))
     }
 
-    private val COUNT = 25
-
     private fun addItem(item: PlaceholderItem) {
         ITEMS.add(item)
         ITEM_MAP.put(item.id, item)

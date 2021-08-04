@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/card_view"
@@ -25,7 +26,9 @@
             android:layout_height="100dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@sample/images" />
+
         <TextView
             android:id="@+id/itemTitle"
             android:layout_width="236dp"
@@ -34,7 +37,9 @@
             android:textSize="30sp"
             app:layout_constraintLeft_toRightOf="@+id/itemImage"
             app:layout_constraintStart_toEndOf="@+id/itemImage"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@sample/chapters" />
+
         <TextView
             android:id="@+id/itemDetail"
             android:layout_width="236dp"
@@ -43,7 +48,8 @@
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toRightOf="@+id/itemImage"
             app:layout_constraintStart_toEndOf="@+id/itemImage"
-            app:layout_constraintTop_toBottomOf="@+id/itemTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/itemTitle"
+            tools:text="@sample/items" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

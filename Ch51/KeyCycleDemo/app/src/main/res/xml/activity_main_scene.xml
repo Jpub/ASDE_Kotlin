@@ -6,46 +6,8 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="7000">
-       <KeyFrameSet>
-           <KeyCycle
-               motion:framePosition="0"
-               motion:motionTarget="@+id/button"
-               motion:wavePeriod="1"
-               motion:waveOffset="0dp"
-               motion:waveShape="sin"
-               android:translationY="60dp"/>
-           <KeyCycle
-               motion:framePosition="25"
-               motion:motionTarget="@+id/button"
-               motion:wavePeriod="2"
-               motion:waveOffset="0dp"
-               motion:waveShape="sin"
-               android:translationY="60dp"/>
-           <KeyCycle
-               motion:framePosition="50"
-               motion:motionTarget="@+id/button"
-               motion:wavePeriod="3"
-               motion:waveOffset="0dp"
-               motion:waveShape="sin"
-               android:translationY="150dp"/>
-           <KeyCycle
-               motion:framePosition="75"
-               motion:motionTarget="@+id/button"
-               motion:wavePeriod="2"
-               motion:waveOffset="0dp"
-               motion:waveShape="sin"
-               android:translationY="60dp"/>
-           <KeyCycle
-               motion:framePosition="100"
-               motion:motionTarget="@+id/button"
-               motion:wavePeriod="1"
-               motion:waveOffset="0dp"
-               motion:waveShape="sin"
-               android:translationY="60dp"/>
-       </KeyFrameSet>
-        <OnClick motion:targetId="@id/button"
-            motion:clickAction="toggle" />
+        motion:duration="1000">
+
         <KeyFrameSet>
             <KeyCycle
                 motion:framePosition="0"
@@ -55,6 +17,7 @@
                 motion:waveShape="sin"
                 android:translationY="60dp"
                 android:rotation="45"/>
+
             <KeyCycle
                 motion:framePosition="25"
                 motion:motionTarget="@+id/button"
@@ -63,6 +26,7 @@
                 motion:waveShape="sin"
                 android:translationY="60dp"
                 android:rotation="80"/>
+
             <KeyCycle
                 motion:framePosition="50"
                 motion:motionTarget="@+id/button"
@@ -71,6 +35,7 @@
                 motion:waveShape="sin"
                 android:translationY="150dp"
                 android:rotation="45"/>
+
             <KeyCycle
                 motion:framePosition="75"
                 motion:motionTarget="@+id/button"
@@ -79,6 +44,7 @@
                 motion:waveShape="sin"
                 android:translationY="60dp"
                 android:rotation="80"/>
+
             <KeyCycle
                 motion:framePosition="100"
                 motion:motionTarget="@+id/button"
@@ -88,6 +54,9 @@
                 android:translationY="60dp"
                 android:rotation="45"/>
         </KeyFrameSet>
+
+        <OnClick motion:targetId="@id/button"
+            motion:clickAction="toggle" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
@@ -108,7 +77,6 @@
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_editor_absoluteX="16dp"
             motion:layout_constraintEnd_toEndOf="parent" />
     </ConstraintSet>
 </MotionScene>

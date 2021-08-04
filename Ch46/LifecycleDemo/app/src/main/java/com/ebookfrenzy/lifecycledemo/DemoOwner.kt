@@ -4,14 +4,14 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
 
-class DemoOwner: LifecycleOwner {
-
+class DemoOwner : LifecycleOwner {
     private val lifecycleRegistry: LifecycleRegistry
 
     init {
         lifecycleRegistry = LifecycleRegistry(this)
         lifecycle.addObserver(DemoObserver())
     }
+
     override fun getLifecycle(): Lifecycle {
         return lifecycleRegistry
     }

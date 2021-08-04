@@ -32,12 +32,13 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
         binding.button.setOnClickListener {
             var action: MainFragmentDirections.MainToSecond =
                 MainFragmentDirections.mainToSecond()
+
             action.setMessage(binding.userText.text.toString())
             Navigation.findNavController(it).navigate(action)
         }
     }
-
 }

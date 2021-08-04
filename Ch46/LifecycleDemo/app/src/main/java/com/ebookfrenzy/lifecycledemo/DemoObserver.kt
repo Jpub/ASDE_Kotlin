@@ -7,7 +7,6 @@ import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.LifecycleOwner
 
 class DemoObserver : LifecycleObserver {
-
     private val LOG_TAG = "DemoObserver"
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
@@ -29,8 +28,6 @@ class DemoObserver : LifecycleObserver {
     fun onStart() {
         Log.i(LOG_TAG, "onStart")
     }
-
-
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     fun onStop() {
         Log.i(LOG_TAG, "onStop")

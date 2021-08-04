@@ -89,6 +89,7 @@ class WebsiteDetailFragment : Fragment() {
                         view, request)
                 }
             }
+
             webView.loadUrl(it.website_url)
         }
     }

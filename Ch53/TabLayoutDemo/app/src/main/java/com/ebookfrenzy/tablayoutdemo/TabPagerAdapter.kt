@@ -7,7 +7,6 @@ class TabPagerAdapter(fa: FragmentActivity, private var tabCount: Int) :
     FragmentStateAdapter(fa) {
 
     override fun createFragment(position: Int): Fragment {
-
         when (position) {
             0 -> return Tab1Fragment()
             1 -> return Tab2Fragment()

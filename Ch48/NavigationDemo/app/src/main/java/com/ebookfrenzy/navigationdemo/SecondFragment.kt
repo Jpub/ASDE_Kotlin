@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.net.Uri
+
 import com.ebookfrenzy.navigationdemo.databinding.FragmentSecondBinding
+import com.ebookfrenzy.navigationdemo.databinding.MainFragmentBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +25,14 @@ class SecondFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding: FragmentSecondBinding? = null
+    private val binding get() = _binding!!
+
+    interface OnFragmentInteractionListener {
+        // TODO: 인자 타입과 이름을 변경함
+        fun onFragmentInteraction(uri: Uri)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -31,21 +41,20 @@ class SecondFragment : Fragment() {
         }
     }
 
-    private var _binding: FragmentSecondBinding? = null
-    private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    interface OnFragmentInteractionListener {
-        // TODO: 인자 타입과 이름을 변경함
-        fun onFragmentInteraction(uri: Uri)
+    override fun onStart() {
+        super.onStart()
+        arguments?.let {
+            val args = SecondFragmentArgs.fromBundle(it)
+            binding.argText.text = args.message
+        }
     }
 
     companion object {
@@ -66,14 +75,5 @@ class SecondFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        arguments?.let {
-            val args = SecondFragmentArgs.fromBundle(it)
-            binding.argText.text = args.message
-        }
     }
 }

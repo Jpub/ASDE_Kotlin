@@ -3,14 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/activity_main.xml" value="0.3115942028985507" />
-        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/content_main.xml" value="0.36614583333333334" />
-        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_first.xml" value="0.36614583333333334" />
-        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_tab1.xml" value="0.33" />
-        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_tab2.xml" value="0.36614583333333334" />
-        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_tab3.xml" value="0.36614583333333334" />
-        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_tab4.xml" value="0.36614583333333334" />
-        <entry key="..\:/ASDE_Kotlin_Bumblebee/Ch53/TabLayoutDemo/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/activity_main.xml" value="0.29257246376811596" />
+        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/content_main.xml" value="0.32472826086956524" />
+        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_first.xml" value="0.32472826086956524" />
+        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_second.xml" value="0.34193840579710144" />
+        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_tab1.xml" value="0.25" />
+        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_tab2.xml" value="0.25" />
+        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_tab3.xml" value="0.25" />
+        <entry key="..\:/ASDE_Kotlin_ArcticFox/Ch53/TabLayoutDemo/app/src/main/res/layout/fragment_tab4.xml" value="0.25" />
       </map>
     </option>
   </component>
