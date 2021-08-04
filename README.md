@@ -24,8 +24,8 @@
 (프로젝트가 열리면서 혹시 'Trust Gradle Project?' 대화상자가 나타나면 Trust Project 버튼을 클릭한다.)  
 
 3. 만일 Sync Android SDKs 대화상자가 나오면 OK 버튼을 클릭하여 현재 사용 중인 컴퓨터의 안드로이드 SDK 디렉터리를 프로젝트에서 사용하도록 한다. 
-그리고 만일 ‘Android Gradle Plugin Upgrade Assistant’ 대화상자가 나타나면 Begin Upgrade 버튼을 클릭하고 다음 대화상자가 나오면 Upgrade 버튼을 눌러서 그래들 플러그인 버전을 업데이트한다.  
+그리고 만일 ‘Android Gradle Plugin Upgrade Assistant’ 메시지나 대화상자가 나타나면 'Begin Upgrade' 버튼을 클릭한 후 밑에 열리는 'Upgrade Assistant' 창에서 'Run selected steps' 버튼을 눌러서 그래들 플러그인 버전을 업데이트한다.  
 
 4. 프로젝트가 로드된 후 아무 창도 열려 있지 않으면 Alt + 1[맥OS에서는 Cmd + 1] 키를 같이 눌러 프로젝트 도구 창을 연 후 필요한 파일을 편집기 창으로 로드한다.  
 
-(만일 프로젝트가 열린 후 소스 코드에 빨간색으로 에러 표시가 나타나는 것이 있을 때는 안드로이드 스튜디오 메뉴의 Build ➞ Rebuild Project를 선택하여 프로젝트를 다시 빌드하면 에러가 없어질 것이다.)
+(Ch88_Before와 Ch88_After 밑에 있는 AppLinking 프로젝트는 3번 항목에서 설명한 그래들 플러그인 버전 업그레이드를 하지 마세요.)
